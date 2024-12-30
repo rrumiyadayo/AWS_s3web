@@ -1,0 +1,138 @@
+/* リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基本スタイル */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+    padding: 30px;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 0px 0px;
+}
+
+img.logo {
+    width: 200px;
+    height: auto;
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #35424a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    margin: 40px 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #35424a;
+}
+.abouts {
+    background-color: #1e3a8a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.abouts h2 {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.abouts h3 {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.abouts p {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+.project {
+    background-color: #cce4f6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.project h3 {
+    margin-bottom: 10px;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff5f56;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/* フォームスタイル */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff5f56;
+}
