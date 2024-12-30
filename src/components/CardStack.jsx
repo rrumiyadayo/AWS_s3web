@@ -28,22 +28,32 @@ function CardStack({ memberName, experiences }) {
 
   return (
     <div
-      ref={stackRef}
-      className="relative h-96 w-72 md:h-[400px] md:w-[300px] overflow-hidden group"
+  ref={stackRef}
+  className="relative h-[600px] w-[30rem] md:h-[400px] md:w-[30rem] group"
+>
+  <h2 className="text-2xl font-bold mb-4 text-center">{memberName}</h2>
+  {experiences.map((experience, index) => (
+    <motion.div
+      key={experience.slug}
+      className="absolute top-0 left-0 w-full"
+      style={{ 
+        zIndex: index === currentIndex 
+          ? experiences.length 
+          : experiences.length - Math.abs(index - currentIndex) 
+      }}
+      animate={{
+        y: (index - currentIndex) * 50, // Adjust vertical spacing
+        x: (index - currentIndex) * 20, // Adjust vertical spacing
+        scale: index === currentIndex ? 1 : 0.9, // Slightly larger unselected cards
+        opacity: Math.max(1 - Math.abs(index - currentIndex) * 0.3, 0),
+      }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
     >
-      <h2 className="text-2xl font-bold mb-4 text-center">{memberName}</h2>
-      {experiences.map((experience, index) => (
-        <motion.div
-          key={experience.slug}
-          className="absolute top-0 left-0 w-full"
-          style={{ zIndex: experiences.length - index }}
-          animate={{ y: (index - currentIndex) * 40, scale: index === currentIndex ? 1 : 0.9, opacity: Math.abs(index - currentIndex) < 2 ? 1 : 0 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        >
-          <Card experience={experience} />
-        </motion.div>
-      ))}
-    </div>
+      <Card experience={experience} />
+    </motion.div>
+  ))}
+</div>
+
   );
 }
 
