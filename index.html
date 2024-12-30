@@ -1,13 +1,65 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluedit　|　ルミアのポートフォリオ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="https://rumiabucketandpail.s3.ap-northeast-1.amazonaws.com/logow.png" alt="Site Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#about">About Bluedit</a></li>
+                <li><a href="#projects">コラボ</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="abouts">
+            <h2>Clear blue spring</h2>
+            <h3>青春のように、AWSに夢中になった件</h3>
+            <p>ルミアの初ウェブページ、Blueditへようこそ！Blueditは、AWSを学習する中で生まれた、Amazon S3を使った静的ウェブサイトのホスティングプロジェクトです。
+                Redditのコミュニティ文化からインスピレーションを得て、ユーザー同士が助け合い、共に学び、IT業界の未来を創造していくことを「ハッピーエンド」と考えています。
+                Blueditで、あなたの情熱を共有し、共に成長しませんか？</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>コラボ</h2>
+        <div class="project">
+            <h3>x名前</h3>
+            <p>コラボ詳細</p>
+            <a href="バケットウェブサイトエンドポイント" target="_blank">x名前へ</a>
+        </div>
+        <!-- 他のプロジェクトもここに追加できます -->
+        
+    </section>
+
+    <section id="contact">
+        <h2>お問い合わせ 【機能準備中】</h2>
+        <form id="contact-form">
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">メール:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">メッセージ:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">送信</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bluedit.</p>
+    </footer>
+
+    <script src="script.js"></script>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
 </html>
