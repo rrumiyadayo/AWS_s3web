@@ -10,7 +10,7 @@
 
 ```bash
 # リポジトリのクローン
-git clone https://github.com/yourusername/AWS_s3web.git
+git clone https://github.com/rrumiyadayo/AWS_s3web
 
 # プロジェクトディレクトリに移動
 cd AWS_s3web
