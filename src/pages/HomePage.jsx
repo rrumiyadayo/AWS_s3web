@@ -1,13 +1,25 @@
 import React from 'react';
 import CardStack from '../components/CardStack';
-import experiencesData from '../assets/experiencesData.json'; // Adjust the path based on where you created the file
+import experiencesData from '../assets/experiencesData.json';
 
 function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+      {/* ロゴを追加 */}
+      <div className="flex justify-center mb-8">
+        <img src="/logow.png" alt="Bluedit Logo" className="w-64 h-auto" />
+      </div>
+
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-900">私たちの経験</h1>
-        <p className="mt-2 text-gray-600">私たちの学びと成果をご覧ください。</p>
+      <h2>Clear blue spring</h2>
+            <h3>青春のように、AWSに夢中になった件</h3>
+        <p className="mt-2 text-gray-600 mx-auto max-w-4xl text-center">
+          ルミアの初ウェブページ、Blueditへようこそ！
+          <br />
+          Blueditは、AWSを学習する中で生まれた、Amazon S3を使った静的ウェブサイトのホスティングプロジェクトです。
+          Redditのコミュニティ文化からインスピレーションを得て、ユーザー同士が助け合い、共に学び、IT業界の未来を創造していくことを「ハッピーエンド」と考えています。
+          Blueditで、あなたの情熱を共有し、共に成長しませんか？
+        </p>
       </div>
 
       <div className="relative py-3 sm:max-w-full sm:px-6 lg:px-8">
