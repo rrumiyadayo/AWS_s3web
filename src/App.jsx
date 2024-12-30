@@ -4,13 +4,11 @@ import HomePage from './pages/HomePage';
 
 function ExperiencePage() {
   const { slug } = useParams();
-  // In a real application, you would fetch the experience data based on the slug
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex justify-center items-center">
       <div className="bg-white rounded-lg shadow-xl p-8">
         <h2 className="text-3xl font-bold mb-4">Experience: {slug}</h2>
         <p className="text-gray-700">Content for {slug} will go here.</p>
-        {/* Add actual content loading/display logic here */}
       </div>
     </div>
   );
