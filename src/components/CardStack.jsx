@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Card from './Card';
-import { motion } from 'framer-motion';
+import React, { useState, useRef, useEffect } from "react";
+import Card from "./Card";
+import { motion } from "framer-motion";
 
 function CardStack({ memberName, experiences, onCardClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,9 +19,11 @@ function CardStack({ memberName, experiences, onCardClick }) {
 
   useEffect(() => {
     if (stackRef.current) {
-      stackRef.current.addEventListener('wheel', handleWheel, { passive: false });
+      stackRef.current.addEventListener("wheel", handleWheel, {
+        passive: false,
+      });
       return () => {
-        stackRef.current.removeEventListener('wheel', handleWheel);
+        stackRef.current.removeEventListener("wheel", handleWheel);
       };
     }
   }, [experiences]);
@@ -37,9 +39,8 @@ function CardStack({ memberName, experiences, onCardClick }) {
           key={experience.slug}
           className="absolute top-0 left-0 w-full"
           style={{
-            zIndex: index === currentIndex
-              ? 30
-              : 20 - Math.abs(index - currentIndex),
+            zIndex:
+              index === currentIndex ? 30 : 20 - Math.abs(index - currentIndex),
           }}
           animate={{
             y: (index - currentIndex) * 50,
@@ -49,7 +50,10 @@ function CardStack({ memberName, experiences, onCardClick }) {
           }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
-          <Card experience={experience} onClick={() => onCardClick(experience)} />
+          <Card
+            experience={experience}
+            onClick={() => onCardClick(experience)}
+          />
         </motion.div>
       ))}
     </div>

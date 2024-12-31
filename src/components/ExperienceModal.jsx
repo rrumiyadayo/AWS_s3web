@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function ExperienceModal({ experience, isOpen, onClose }) {
   const modalRef = useRef(null);
@@ -12,12 +12,12 @@ function ExperienceModal({ experience, isOpen, onClose }) {
       modalRef.current.animate(
         [
           { opacity: 0, y: 50, rotate: `${randomRotation}deg`, scale: 0.9 },
-          { opacity: 1, y: 0, rotate: '0deg', scale: 1 },
+          { opacity: 1, y: 0, rotate: "0deg", scale: 1 },
         ],
         {
           duration: 0.2 * 1000, // milliseconds
-          easing: 'ease-out',
-          fill: 'forwards',
+          easing: "ease-out",
+          fill: "forwards",
         }
       );
     }
@@ -30,13 +30,13 @@ function ExperienceModal({ experience, isOpen, onClose }) {
 
       modalRef.current.animate(
         [
-          { opacity: 1, y: 0, rotate: '0deg', scale: 1 },
+          { opacity: 1, y: 0, rotate: "0deg", scale: 1 },
           { opacity: 0, y: 50, rotate: `${randomRotation}deg`, scale: 0.9 },
         ],
         {
           duration: 0.3 * 1000,
-          easing: 'ease-in',
-          fill: 'forwards',
+          easing: "ease-in",
+          fill: "forwards",
         }
       ).onfinish = onClose;
     } else {
@@ -65,7 +65,10 @@ function ExperienceModal({ experience, isOpen, onClose }) {
           <div
             ref={modalRef}
             className="fixed inset-0 m-auto w-[90%] max-w-2xl h-fit max-h-[80vh] bg-white rounded-xl shadow-2xl z-50 overflow-auto"
-            style={{ opacity: 0, transform: 'translateY(50px) rotate(0deg) scale(0.9)' }}
+            style={{
+              opacity: 0,
+              transform: "translateY(50px) rotate(0deg) scale(0.9)",
+            }}
           >
             <div className="p-8">
               <button
@@ -75,7 +78,9 @@ function ExperienceModal({ experience, isOpen, onClose }) {
                 ✕
               </button>
               <h2 className="text-3xl font-bold mb-4">{experience.title}</h2>
-              <p className="text-gray-700 text-lg leading-relaxed">{experience.summary}</p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                {experience.summary}
+              </p>
             </div>
           </div>
         </>
