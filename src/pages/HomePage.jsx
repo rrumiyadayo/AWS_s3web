@@ -58,7 +58,13 @@ function HomePage() {
       >
         <Header />
         <div className="relative py-3 sm:max-w-full sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-2 sm:rounded-3xl"></div>
+          <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-0 sm:rounded-3xl"></div>
+          </motion.div>
           <div className="relative bg-white shadow-lg sm:rounded-3xl p-24">
             <div className="flex flex-col items-center justify-center min-h-[500px]">
               <motion.div variants={itemVariants}>
