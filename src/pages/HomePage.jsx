@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../pages/Header";
 import MemberCards from "../components/MemberCards";
 import ExperienceModal from "../components/ExperienceModal";
 import CollabTitle from "../pages/CollabTitle";
 import { motion } from "framer-motion";
+import OpeningAnimation from "./OpeningAnimation";
 
 function HomePage() {
-  const [isIntroComplete, setIsIntroComplete] = useState(false);
+  const [isIntroDone, setIsIntroDone] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
-  const [isOutroAnimating, setIsOutroAnimating] = useState(false);
 
   const handleCardClick = (experience) => {
     setSelectedExperience(experience);
@@ -42,70 +42,15 @@ function HomePage() {
     },
   };
 
-  const slideInLeftYellow = {
-    initial: { x: "-100%" },
-    animate: { x: 0 },
-    transition: { duration: 0.2, ease: "linear" }, 
-  };
-
-  const slideInLeftBlue = {
-    initial: { x: "-100%" },
-    animate: { x: 0 },
-    transition: { duration: 0.3, ease: "linear"},
-  };
-
-  const slideOutRight = {
-    animate: { x: "100%" },
-    transition: { duration: 0.3, ease: "linear" },
-  };
-
-  useEffect(() => {
-    const introTimer = setTimeout(() => {
-      setIsIntroComplete(true);
-    }, 500); // total time for intro/white
-
-    return () => clearTimeout(introTimer);
-  }, []);
-
-  useEffect(() => {
-    if (isIntroComplete) {
-      setIsOutroAnimating(true);
-    }
-  }, [isIntroComplete]);
-
   return (
-    <motion.div 
-      className="min-h-screen bg-white overflow-x-hidden relative"
-    >
-      <motion.div
-        className="fixed inset-0 w-full h-full"
-        initial={{ zIndex: 10 }}
-        animate={isOutroAnimating ? "animate" : ""}
-        variants={slideOutRight}
-        transition={{ delay: 0.3 }}
-        style={{ pointerEvents: isOutroAnimating ? 'none' : 'auto' }}
-      >
-        <motion.div
-          className="absolute inset-0 w-full h-full bg-yellow-200"
-          initial="initial"
-          animate={isIntroComplete ? "animate" : ""}
-          variants={slideInLeftYellow}
-          transition={{ ...slideInLeftYellow.transition}}
-        />
-        <motion.div
-          className="absolute inset-0 w-full h-full bg-blue-500"
-          initial="initial"
-          animate={isIntroComplete ? "animate" : ""}
-          variants={slideInLeftBlue}
-          transition={{ ...slideInLeftBlue.transition}}
-        />
-      </motion.div>
+    <motion.div className="min-h-screen bg-white overflow-x-hidden relative">
+      <OpeningAnimation onAnimationComplete={() => setIsIntroDone(true)} />
 
       <motion.div
         className="py-6 flex flex-col justify-center sm:py-12"
         variants={containerVariants}
         initial="hidden"
-        animate={isIntroComplete ? "visible" : "hidden"}
+        animate={isIntroDone ? "visible" : "hidden"}
         style={{
           position: "relative",
           zIndex: 3,
