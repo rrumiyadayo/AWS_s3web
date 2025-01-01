@@ -75,10 +75,10 @@ function HomePage() {
 
   return (
     <motion.div 
-      className="min-h-screen bg-white"
+      className="min-h-screen bg-white overflow-x-hidden relative"
     >
       <motion.div
-        className="absolute inset-0 w-full h-full"
+        className="fixed inset-0 w-full h-full"
         initial={{ zIndex: 10 }}
         animate={isOutroAnimating ? "animate" : ""}
         variants={slideOutRight}
@@ -108,7 +108,7 @@ function HomePage() {
         animate={isIntroComplete ? "visible" : "hidden"}
         style={{
           position: "relative",
-          zIndex: 3, // Ensure content is on top
+          zIndex: 3,
         }}
       >
         <Header />
