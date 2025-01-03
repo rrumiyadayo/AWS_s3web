@@ -1,12 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const TriangleBackground = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
+  const { scrollYProgress } = useScroll(); // Use scroll on the viewport
 
   const translateY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
@@ -29,12 +25,9 @@ const TriangleBackground = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1.2 }}
-      className="-z-50"
+      className="fixed inset-0 -z-50 pointer-events-none"
     >
-      <div
-        ref={containerRef}
-        className="absolute inset-0 h-full w-full overflow-hidden"
-      >
+      <div className="absolute inset-0 h-full w-full overflow-hidden">
         <motion.div
           style={{ y: translateY, rotate: "30deg" }}
           className="absolute top-[21%] left-[4%] w-0 h-0 border-l-[50px] border-l-blue-400 border-b-[50px] border-b-transparent origin-bottom-left"
