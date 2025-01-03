@@ -1,19 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import CardStack from "./CardStack";
 import experiencesData from "../assets/experiencesData.json";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50, scale: 0.8 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1, 
-    transition: { 
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
       duration: 0.6,
-      ease: "easeOut"
-    } 
-  }
+      ease: "easeOut",
+    },
+  },
 };
 
 function MemberCards({ onCardClick }) {
@@ -29,7 +30,7 @@ function MemberCards({ onCardClick }) {
           initial="hidden"
           animate="visible"
           transition={{
-            delay: 1.0 + index * 0.2
+            delay: 1.0 + index * 0.2,
           }}
         >
           <CardStack
@@ -42,5 +43,8 @@ function MemberCards({ onCardClick }) {
     </div>
   );
 }
+MemberCards.propTypes = {
+  onCardClick: PropTypes.func.isRequired,
+};
 
 export default MemberCards;

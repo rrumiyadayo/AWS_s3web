@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Card from "./Card";
 import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
 
 function CardStack({ memberName, experiences, onCardClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,5 +60,10 @@ function CardStack({ memberName, experiences, onCardClick }) {
     </div>
   );
 }
+CardStack.propTypes = {
+  memberName: PropTypes.string.isRequired,
+  experiences: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onCardClick: PropTypes.func.isRequired
+};
 
 export default CardStack;

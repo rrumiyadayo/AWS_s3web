@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
 
 function Card({ experience, onClick }) {
   return (
@@ -14,5 +15,12 @@ function Card({ experience, onClick }) {
     </motion.div>
   );
 }
+Card.propTypes = {
+  experience: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+  }).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default Card;

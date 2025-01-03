@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 const MotionHoverUp = ({
@@ -20,12 +21,19 @@ const MotionHoverUp = ({
         scale: hoverScale,
         transition: { duration: transitionDuration },
       }}
-    //   style={{ cursor: "pointer" }}
+      //   style={{ cursor: "pointer" }}
       {...props}
     >
       {children}
     </motion.div>
   );
+};
+MotionHoverUp.propTypes = {
+  children: PropTypes.node.isRequired,
+  hoverY: PropTypes.number,
+  hoverShadow: PropTypes.string,
+  hoverScale: PropTypes.number,
+  transitionDuration: PropTypes.number,
 };
 
 export default MotionHoverUp;

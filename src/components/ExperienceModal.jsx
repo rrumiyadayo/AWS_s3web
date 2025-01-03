@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import PropTypes from 'prop-types';
 
 function ExperienceModal({ experience, isOpen, onClose }) {
   const modalRef = useRef(null);
@@ -88,5 +89,13 @@ function ExperienceModal({ experience, isOpen, onClose }) {
     </AnimatePresence>
   );
 }
+ExperienceModal.propTypes = {
+  experience: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired
+  }).isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired
+};
 
 export default ExperienceModal;
