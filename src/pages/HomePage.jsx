@@ -5,6 +5,7 @@ import ExperienceModal from "../components/ExperienceModal";
 import CollabTitle from "../pages/CollabTitle";
 import { motion } from "framer-motion";
 import OpeningAnimation from "./OpeningAnimation";
+import TriangleBackground from "../components/TriangleBackground";
 
 function HomePage() {
   const [isIntroDone, setIsIntroDone] = useState(false);
@@ -55,8 +56,10 @@ function HomePage() {
           position: "relative",
           zIndex: 3,
         }}
-      >
+      > 
+        <TriangleBackground />
         <Header />
+        
         <div className="relative py-3 sm:max-w-full sm:px-6 lg:px-8">
           <motion.div
           initial={{ opacity: 0 }}
