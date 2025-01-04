@@ -3,6 +3,7 @@ import Header from "../pages/Header";
 import MemberCards from "../components/MemberCards";
 import ExperienceModal from "../components/ExperienceModal";
 import CollabTitle from "../pages/CollabTitle";
+import NavigationBar from "../pages/NavigationBar";
 import { motion } from "framer-motion";
 import OpeningAnimation from "./OpeningAnimation";
 import TriangleBackground from "../components/TriangleBackground";
@@ -58,6 +59,7 @@ function HomePage() {
         }}
       > 
         <TriangleBackground />
+        <NavigationBar />
         <Header />
         
         <div className="relative py-3 sm:max-w-full sm:px-6 lg:px-8">
