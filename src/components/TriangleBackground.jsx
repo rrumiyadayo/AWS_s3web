@@ -30,42 +30,42 @@ const TriangleBackground = () => {
       <div className="absolute inset-0 h-full w-full overflow-hidden">
         <motion.div
           style={{ y: translateY, rotate: "30deg" }}
-          className="absolute top-[21%] left-[4%] w-0 h-0 border-l-[50px] border-l-blue-400 border-b-[50px] border-b-transparent origin-bottom-left"
+          className="absolute top-[26%] left-[4%] w-0 h-0 border-l-[50px] border-l-blue-400 border-b-[50px] border-b-transparent origin-bottom-left"
           variants={triangleVariants}
           initial="initial"
           animate="animate"
         />
         <motion.div
           style={{ y: translateY, rotate: "80deg" }}
-          className="absolute top-[0.3%] left-[15%] w-0 h-0 border-l-[50px] border-l-yellow-400 border-b-[60px] border-b-transparent origin-bottom-left"
+          className="absolute top-[5.3%] left-[15%] w-0 h-0 border-l-[50px] border-l-yellow-400 border-b-[60px] border-b-transparent origin-bottom-left"
           variants={triangleVariants}
           initial="initial"
           animate="animate"
         />
         <motion.div
           style={{ y: translateY, rotate: "20deg" }}
-          className="absolute top-[13%] left-[33.33%] w-0 h-0 border-l-[50px] border-l-blue-500 border-b-[45px] border-b-transparent origin-bottom-left"
+          className="absolute top-[18%] left-[33.33%] w-0 h-0 border-l-[50px] border-l-blue-500 border-b-[45px] border-b-transparent origin-bottom-left"
           variants={triangleVariants}
           initial="initial"
           animate="animate"
         />
         <motion.div
           style={{ y: translateY, rotate: "-160deg" }}
-          className="absolute top-[5%] right-[4%] w-0 h-0 border-l-[40px] border-l-yellow-500 border-b-[65px] border-b-transparent origin-bottom-left"
+          className="absolute top-[10%] right-[4%] w-0 h-0 border-l-[40px] border-l-yellow-500 border-b-[65px] border-b-transparent origin-bottom-left"
           variants={triangleVariants}
           initial="initial"
           animate="animate"
         />
         <motion.div
           style={{ y: translateY, rotate: "-18deg" }}
-          className="absolute top-[23%] right-[20%] w-0 h-0 border-l-[28px] border-l-blue-300 border-b-[48px] border-b-transparent origin-bottom-left"
+          className="absolute top-[28%] right-[20%] w-0 h-0 border-l-[28px] border-l-blue-300 border-b-[48px] border-b-transparent origin-bottom-left"
           variants={triangleVariants}
           initial="initial"
           animate="animate"
         />
         <motion.div
           style={{ y: translateY, rotate: "110deg" }}
-          className="absolute top-[2%] right-[33%] w-0 h-0 border-l-[30px] border-l-yellow-300 border-b-[40px] border-b-transparent origin-bottom-left"
+          className="absolute top-[7%] right-[33%] w-0 h-0 border-l-[30px] border-l-yellow-300 border-b-[40px] border-b-transparent origin-bottom-left"
           variants={triangleVariants}
           initial="initial"
           animate="animate"
