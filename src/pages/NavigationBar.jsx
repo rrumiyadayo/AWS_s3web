@@ -17,7 +17,7 @@ function NavigationBar() {
               <motion.img
                 src="/bluedit.png"
                 alt="Bluedit Logo"
-                className="h-8 w-auto"
+                className="h-10 w-auto mr-1"
               />
               <motion.img
                 src="/logow.png"
