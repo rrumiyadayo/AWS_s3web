@@ -1,69 +1,42 @@
-import React, { useState, useRef, useEffect } from "react";
-import Card from "./Card";
+import React from "react";
 import { motion } from "framer-motion";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function CardStack({ memberName, experiences, onCardClick }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const stackRef = useRef(null);
-
-  const handleWheel = (event) => {
-    event.preventDefault();
-    const delta = Math.sign(event.deltaY);
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex + delta;
-      if (newIndex < 0) return experiences.length - 1;
-      if (newIndex >= experiences.length) return 0;
-      return newIndex;
-    });
-  };
-
-  useEffect(() => {
-    if (stackRef.current) {
-      stackRef.current.addEventListener("wheel", handleWheel, {
-        passive: false,
-      });
-      return () => {
-        stackRef.current.removeEventListener("wheel", handleWheel);
-      };
-    }
-  }, [experiences]);
-
   return (
-    <div
-      ref={stackRef}
-      className="relative h-[600px] w-[30rem] md:h-[400px] md:w-[30rem] group"
-    >
+    <div className="h-full w-full flex flex-col">
       <h2 className="text-2xl font-bold mb-4 text-center">{memberName}</h2>
-      {experiences.map((experience, index) => (
+      {experiences.map((experience) => (
         <motion.div
           key={experience.slug}
-          className="absolute top-0 left-0 w-full"
-          style={{
-            zIndex:
-              index === currentIndex ? 30 : 20 - Math.abs(index - currentIndex),
-          }}
-          animate={{
-            y: (index - currentIndex) * 50,
-            x: (index - currentIndex) * 20,
-            scale: index === currentIndex ? 1 : 0.9,
-            opacity: Math.max(1 - Math.abs(index - currentIndex) * 0.3, 0),
-          }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          className="bg-white rounded-lg shadow-md overflow-hidden mb-4 cursor-pointer"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={() => onCardClick(experience)}
         >
-          <Card
-            experience={experience}
-            onClick={() => onCardClick(experience)}
-          />
+          <div className="md:flex">
+            <div className="md:w-1/3 p-4 flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full bg-gray-200">
+                {/* 写真 */}
+              </div>
+            </div>
+            <div className="md:w-2/3 p-6">
+              <h3 className="text-xl font-semibold text-gray-800">
+                {experience.title}
+              </h3>
+              <p className="mt-2 text-gray-600">{experience.summary}</p>
+            </div>
+          </div>
         </motion.div>
       ))}
     </div>
   );
 }
+
 CardStack.propTypes = {
   memberName: PropTypes.string.isRequired,
   experiences: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onCardClick: PropTypes.func.isRequired
+  onCardClick: PropTypes.func.isRequired,
 };
 
 export default CardStack;

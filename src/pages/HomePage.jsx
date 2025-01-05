@@ -70,7 +70,7 @@ function HomePage() {
             transition={{ duration: 0.8, delay: 1.2 }}
           ></motion.div>
           <div className="relative  shadow-lg sm:rounded-3xl">
-            <div className="flex flex-col items-center justify-center min-h-[500px]">
+            <div className="flex flex-col items-center justify-center">
               <motion.div variants={itemVariants}>
                 <CollabTitle />
               </motion.div>
