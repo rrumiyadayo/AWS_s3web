@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide": "^4.1.4",
     "animejs": "^3.2.2",
     "autoprefixer": "^10.4.20",
     "framer-motion": "^11.15.0",
