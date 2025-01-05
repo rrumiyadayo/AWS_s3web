@@ -49,7 +49,7 @@ function HomePage() {
       <OpeningAnimation onAnimationComplete={() => setIsIntroDone(true)} />
 
       <motion.div
-        className="py-6 flex flex-col justify-center sm:py-12"
+        className="flex flex-col justify-center sm:pt-12"
         variants={containerVariants}
         initial="hidden"
         animate={isIntroDone ? "visible" : "hidden"}
@@ -57,20 +57,19 @@ function HomePage() {
           position: "relative",
           zIndex: 3,
         }}
-      > 
+      >
+        <div className="bg-gradient-to-br from-blue-100 to-bg-blue-300 bg-opacity-25 py-28">
+          <Header />
+        </div>
         <TriangleBackground />
         <NavigationBar />
-        <Header />
-        
         <div className="relative py-3 sm:max-w-full sm:px-6 lg:px-8">
           <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-0 sm:rounded-3xl"></div>
-          </motion.div>
-          <div className="relative bg-white shadow-lg sm:rounded-3xl p-24">
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          ></motion.div>
+          <div className="relative  shadow-lg sm:rounded-3xl">
             <div className="flex flex-col items-center justify-center min-h-[500px]">
               <motion.div variants={itemVariants}>
                 <CollabTitle />
@@ -81,7 +80,6 @@ function HomePage() {
             </div>
           </div>
         </div>
-
         {selectedExperience && (
           <ExperienceModal
             experience={selectedExperience}
@@ -89,6 +87,17 @@ function HomePage() {
             onClose={handleModalClose}
           />
         )}
+        <div
+          className="py-10 text-center text-black font-bold"
+          style={{
+            borderTop: "3px solid transparent",
+            borderImage:
+              "linear-gradient(to left, rgba(59, 130, 246, 1), rgba(59, 130, 246, 0.4)) 1",
+            borderImageSlice: "1",
+          }}
+        >
+          <footer>© Bluedit</footer>
+        </div>
       </motion.div>
     </motion.div>
   );

@@ -25,7 +25,7 @@ const TriangleBackground = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1.2 }}
-      className="fixed inset-0 -z-50 pointer-events-none"
+      className="fixed inset-0 -z-40 pointer-events-none"
     >
       <div className="absolute inset-0 h-full w-full overflow-hidden">
         <motion.div
