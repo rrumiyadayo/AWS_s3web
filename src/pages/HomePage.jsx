@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../pages/Header";
-import MemberCards from "../components/MemberCards";
-import ExperienceModal from "../components/ExperienceModal";
+import MemberCards from "../components/CollaborationMemberCards";
+import ExperienceModal from "../components/CollaborationModal";
 import CollabTitle from "../pages/CollabTitle";
 import NavigationBar from "../pages/NavigationBar";
 import { motion } from "framer-motion";
@@ -23,7 +23,6 @@ function HomePage() {
   return (
     <motion.div className="min-h-screen bg-white overflow-x-hidden relative">
       <OpeningAnimation onAnimationComplete={() => setIsIntroDone(true)} />
-
       <motion.div
         className="flex flex-col justify-center sm:pt-12"
         variants={{
