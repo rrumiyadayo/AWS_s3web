@@ -6,7 +6,7 @@ import experiences from '../assets/experienceData.json';
 const Experiences = () => {
 
   return (
-    <section className="py-16 bg-white">
+    <section  id="メンバーの経験" style={{ scrollMarginTop: "3rem" }} className="py-16 bg-white">
       <div className="container mx-auto px-8 md:px-72">
         <h2 className="text-3xl font-bold text-left mb-12">クラブ活動の体験</h2>
         {experiences.map((experience, index) => (
