@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import CardStack from "./CardStack";
-import experiencesData from "../assets/experiencesData.json";
+import collaborations from "../assets/collaborationData.json";
 
 function MemberCards({ onCardClick }) {
   const members = ["メンバー 1", "メンバー 2", "メンバー 3"];
@@ -38,7 +38,7 @@ function MemberCards({ onCardClick }) {
           <div className="w-10/12 flex justify-center">
             <CardStack
               memberName={memberName}
-              experiences={experiencesData[`member${index + 1}`]}
+              experiences={collaborations[`member${index + 1}`]}
               onCardClick={onCardClick}
             />
           </div>
