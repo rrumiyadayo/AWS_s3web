@@ -20,37 +20,22 @@ function HomePage() {
     setSelectedExperience(null);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
-      },
-    },
-  };
-
   return (
     <motion.div className="min-h-screen bg-white overflow-x-hidden relative">
       <OpeningAnimation onAnimationComplete={() => setIsIntroDone(true)} />
 
       <motion.div
         className="flex flex-col justify-center sm:pt-12"
-        variants={containerVariants}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              delayChildren: 0.3,
+              staggerChildren: 0.2,
+            },
+          },
+        }}
         initial="hidden"
         animate={isIntroDone ? "visible" : "hidden"}
         style={{
@@ -71,10 +56,21 @@ function HomePage() {
           ></motion.div>
           <div className="relative  shadow-lg sm:rounded-3xl">
             <div className="flex flex-col items-center justify-center">
-              <motion.div variants={itemVariants}>
+              <motion.div
+                variants={{
+                  hidden: { y: 20, opacity: 0 },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      type: "spring",
+                      damping: 20,
+                      stiffness: 100,
+                    },
+                  },
+                }}
+              >
                 <CollabTitle />
-              </motion.div>
-              <motion.div variants={itemVariants}>
                 <MemberCards onCardClick={handleCardClick} />
               </motion.div>
             </div>
