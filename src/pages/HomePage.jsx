@@ -7,6 +7,7 @@ import NavigationBar from "../pages/NavigationBar";
 import { motion } from "framer-motion";
 import OpeningAnimation from "./OpeningAnimation";
 import TriangleBackground from "../components/TriangleBackground";
+import ExperiencePage from "../pages/Experiences";
 
 function HomePage() {
   const [isIntroDone, setIsIntroDone] = useState(false);
@@ -75,6 +76,7 @@ function HomePage() {
             </div>
           </div>
         </div>
+        <ExperiencePage/>
         {selectedExperience && (
           <ExperienceModal
             experience={selectedExperience}
