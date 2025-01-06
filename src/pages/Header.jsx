@@ -13,7 +13,7 @@ function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
-            <div id="about" style={{ scrollMarginTop: "10rem" }}>
+            <div id="about" style={{ scrollMarginTop: "13rem" }}>
               <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 Clear blue spring
                 <br />

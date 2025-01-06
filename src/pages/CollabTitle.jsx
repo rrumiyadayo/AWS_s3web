@@ -9,7 +9,7 @@ function CollabTitle() {
         className="text-inherit font-inherit text-center mb-0"
         style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)" }}
       >
-        <div id="コラボ">コラボレーション</div>
+        <div id="コラボ" style={{ scrollMarginTop: "10rem" }}>コラボレーション</div>
       </motion.h1>
     </MotionHoverUp>
   );
