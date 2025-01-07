@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../pages/Header";
-import MemberCards from "../components/CollaborationMemberCards";
+import CollaborationMemberCards from "../components/CollaborationMemberCards";
 import ExperienceModal from "../components/CollaborationModal";
 import CollabTitle from "../pages/CollabTitle";
 import NavigationBar from "../pages/NavigationBar";
@@ -71,7 +71,7 @@ function HomePage() {
                 }}
               >
                 <CollabTitle />
-                <MemberCards onCardClick={handleCardClick} />
+                <CollaborationMemberCards onCardClick={handleCardClick} />
               </motion.div>
             </div>
           </div>
