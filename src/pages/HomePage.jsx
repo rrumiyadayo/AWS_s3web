@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import OpeningAnimation from "./OpeningAnimation";
 import TriangleBackground from "../components/TriangleBackground";
 import ExperiencePage from "../pages/Experiences";
+import ScrollTopButton from "../components/ScrollTopButton";
 
 function HomePage() {
   const [isIntroDone, setIsIntroDone] = useState(false);
@@ -24,6 +25,7 @@ function HomePage() {
   return (
     <motion.div className="min-h-screen bg-white overflow-x-hidden relative">
       <OpeningAnimation onAnimationComplete={() => setIsIntroDone(true)} />
+      <ScrollTopButton />
       <motion.div
         className="flex flex-col justify-center sm:pt-12"
         variants={{
