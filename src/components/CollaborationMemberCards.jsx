@@ -13,15 +13,14 @@ function MemberCards({ onCardClick }) {
     type: "loop",
     drag: true,
     autoplay: true,
-    interval: 5000,
-    speed: 9000,
+    interval: 0, // duration (in ms) that each slide is displayed
+    speed: 12000, // time it takes for one slide to move out of view
     easing: "linear",
     wheel: false,
     arrows: false,
     pagination: false,
     startIndex: 1,
     gap: '-8rem',
-    perMove: 1,
     perPage: 2,
   };
 
