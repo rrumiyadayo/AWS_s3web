@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import MotionHoverUp from "../components/MotionHoverUp";
+import MotionHoverUp from "../../components/MotionHoverUp";
 
 function Header() {
   return (

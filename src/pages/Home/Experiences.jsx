@@ -1,7 +1,7 @@
 // Experiences.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import experiences from '../assets/experienceData.json';
+import experiences from '../../assets/experienceData.json';
 
 const Experiences = () => {
 

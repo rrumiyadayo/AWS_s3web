@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import MotionHoverUp from "../components/MotionHoverUp";
+import MotionHoverUp from "./MotionHoverUp";
 
 function NavigationBar() {
   return (
@@ -30,7 +30,7 @@ function NavigationBar() {
 
             </a>
             <div className="flex space-x-8">
-              {["About", "コラボ", "メンバーの経験"].map(
+              {["About", "コラボ", "メンバーの経験", "アニメ"].map(
                 (item) => (
                   <MotionHoverUp
                     key={item}
@@ -41,7 +41,8 @@ function NavigationBar() {
                     <a href={
                       item === "About" ? "#about" :
                       item === "コラボ" ? "#コラボ" :
-                      item === "メンバーの経験" ? "#メンバーの経験" : ""
+                      item === "メンバーの経験" ? "#メンバーの経験" : 
+                      item === "アニメ" ? "/anime" : ""
                     }>
                       {item}
                     </a>

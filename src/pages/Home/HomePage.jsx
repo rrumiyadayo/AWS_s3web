@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import Header from "../pages/Header";
-import CollaborationMemberCards from "../components/CollaborationMemberCards";
-import ExperienceModal from "../components/CollaborationModal";
-import CollabTitle from "../pages/CollabTitle";
-import NavigationBar from "../pages/NavigationBar";
 import { motion } from "framer-motion";
-import OpeningAnimation from "./OpeningAnimation";
-import TriangleBackground from "../components/TriangleBackground";
-import ExperiencePage from "../pages/Experiences";
-import ScrollTopButton from "../components/ScrollTopButton";
+
+import Header from "./Header"
+import CollabTitle from "./CollabTitle";
+import ExperiencePage from "./Experiences";
+
+import OpeningAnimation from "../../components/OpeningAnimation";
+import NavigationBar from "../../components/NavigationBar";
+import CollaborationMemberCards from "../../components/CollaborationMemberCards";
+import ExperienceModal from "../../components/CollaborationModal";
+import TriangleBackground from "../../components/TriangleBackground";
+import ScrollTopButton from "../../components/ScrollTopButton";
 
 function HomePage() {
   const [isIntroDone, setIsIntroDone] = useState(false);
