@@ -1,8 +1,11 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import MotionHoverUp from "./MotionHoverUp";
 
 function NavigationBar() {
+  const location = useLocation();
+  const currentPath = location.pathname;
   return (
     <motion.div
       className="text-center mb-8 mt-20"
@@ -39,11 +42,13 @@ function NavigationBar() {
                     style={{ cursor: "pointer" }}
                   >
                     <a href={
-                      item === "About" ? "#about" :
-                      item === "コラボ" ? "#コラボ" :
-                      item === "メンバーの経験" ? "#メンバーの経験" : 
+                      item === "About" ? ( currentPath === "/" ? "#about" : "/#about") :
+                      item === "コラボ" ? ( currentPath === "/" ? "#コラボ" : "/#コラボ" ) :
+                      item === "メンバーの経験" ? ( currentPath === "/" ? "#メンバーの経験" : "/#メンバーの経験" ) : 
                       item === "アニメ" ? "/anime" : ""
-                    }>
+                    }
+                    >
+                      
                       {item}
                     </a>
                   </MotionHoverUp>
