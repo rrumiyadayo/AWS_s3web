@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import MotionHoverUp from "./MotionHoverUp";
+import MotionHoverUp from "../MotionHoverUp";
 
 function NavigationBar() {
   const location = useLocation();
